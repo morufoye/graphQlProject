@@ -1,0 +1,10 @@
+{
+  "type": "mysql",
+  "host": "localhost",
+  "port": 3306,
+  "username": "root",
+  "password": "P@ssword123",
+  "database": "school_app",
+  "entities": ["dist/entities/*.entity.js"],
+  "migrations": ["dist/migrations/*.js"]
+}
