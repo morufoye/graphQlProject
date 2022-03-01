@@ -116,6 +116,11 @@ export default class AssessmentService {
         return "success";
     }
 
+    public async updateStudentScore(userId:string, assessment_id:string, total_score:string): Promise<String | undefined>{
+        const assessmentObject= StudentAssessmentAnswerEntity.update({userId : userId, assessment_id:assessment_id}, {total_score: total_score});
+        return "success";
+    }
+
     public async loadSubmittedAssignmentsForTeacher(  assigned_by: string): Promise<StudentAssessmentAnswerEntity[] | undefined>{
         const res =  await StudentAssessmentAnswerEntity.find({ relations: ["user"] });
         return res

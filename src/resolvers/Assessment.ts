@@ -96,6 +96,17 @@ export class AssessmentResolver {
     ): Promise<String  | undefined> {
         return  this.assessmentService.updateStudentAnswer(userId, assessment_id, assessment_detail, total_score);
     }
+    //updateStudentScore
+
+    @Mutation(() => String ,{nullable: true})
+    updateStudentScore(
+        @Arg("userId") userId: string,
+        @Arg("assessment_id") assessment_id: string,
+        @Arg("total_score") total_score: string,
+        @Ctx() { res }: MyContext
+    ): Promise<String  | undefined> {
+        return  this.assessmentService.updateStudentScore(userId, assessment_id, total_score);
+    }
 
     @Mutation(() => StudentAssessmentAnswerEntity,{nullable: true})
     getStudentAnswerDetail(

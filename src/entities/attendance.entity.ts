@@ -38,6 +38,4 @@ export class Attendance extends BaseEntity {
     @Field( { nullable: true })
     @Column({nullable: true})
     murajah: string;
-
-
 }
